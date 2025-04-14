@@ -6,6 +6,8 @@ use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\OfficersController;
 use App\Http\Controllers\InspectionExtractController;
+use App\Http\Controllers\CompanyController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -36,3 +38,8 @@ Route::post('/officers', [OfficersController::class, 'store']);
 
 Route::get('/inspection_extract', [InspectionExtractController::class, 'RetrieveAll']);
 Route::post('/inspection_extract', [InspectionExtractController::class, 'store']);
+
+Route::get('/companies', [CompanyController::class, 'RetrieveAll']);
+Route::post('/companies', [CompanyController::class, 'store']);
+
+Route::get('/company/{companyId}/status-report', [CompanyController::class, 'StatusReport']);
